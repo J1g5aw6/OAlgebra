@@ -12,6 +12,10 @@ $(OBJDIR)/main.cmx: $(SRCDIR)/main.ml prepare
 $(OBJDIR)/test: $(TSTDIR)/test.ml $(OBJDIR)/main.cmx
 	$(CAMLOPT) -I $(OBJDIR)/ -o $(OBJDIR)/test $(OBJDIR)/main.cmx $(TSTDIR)/test.ml
 
+$(OBJDIR)/test1: $(TSTDIR)/test1.ml $(OBJDIR)/main.cmx
+	$(CAMLOPT) -I $(OBJDIR)/ -o $(OBJDIR)/test1 $(OBJDIR)/main.cmx $(TSTDIR)/test1.ml
+
+
 clean:
 	-@rm -rf $(OBJDIR)
 	-@rm -rf $(INTDIR)

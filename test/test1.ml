@@ -7,12 +7,12 @@ end;;
 
 module Field = Main.Z_NZ(N);;
 
-let test0 test_ctxt = assert_equal 2. (List.hd sp1);;
-let test1 test_ctxt = assert_equal true (Polynom.is_zero Polynom.zero);;
+let test0 test_ctxt = assert_equal (Field.is_zero 29) true;;
+let test1 test_ctxt = assert_equal (Field.is_zero 28) false;;
 
 
 let tsuite =
-  "tsuite">:::["test_zero">:: test4;
-               "test_scmult2">:: test3];;
+  "tsuite">:::["test_zero">:: test0;
+               "test_nzero">:: test1];;
 
 run_test_tt_main tsuite;;
